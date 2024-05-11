@@ -1,0 +1,33 @@
+﻿@model Travel_Trip_Project.Models.Siniflar.Otel
+
+@{
+    ViewBag.Title = "OtelGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Otel Güncelleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("OtelGuncelle", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.ID)
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.OtelBaslik)
+    @Html.TextBoxFor(x => x.OtelBaslik, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.OtelImage)
+    @Html.TextBoxFor(x => x.OtelImage, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Konum)
+    @Html.TextBoxFor(x => x.Konum, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Fiyat)
+    @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.OtelDetay)
+    @Html.TextAreaFor(x => x.OtelDetay, 15, 1, new { @class = "form-control" })
+    <br />
+    <button style="margin-bottom:20px" class="btn btn-primary">Otel Güncelle</button>
+
+}
+

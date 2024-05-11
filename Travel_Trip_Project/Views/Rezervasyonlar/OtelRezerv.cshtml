@@ -1,0 +1,33 @@
+﻿@using Travel_Trip_Project.Models.Siniflar
+@model List<OtelRezervasyon>
+
+<div style="width:85%; margin: 0 auto;">
+    <h2>Otel Rezervasyonlarım</h2>
+    <br />
+    <table style="margin-bottom:20px" class="table table-bordered">
+        <tr>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Tur Adı</th>
+            <th>Fiyat</th>
+            <th>Sil</th>
+            <th>Detaylar</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.Ad</td>
+                <td>@x.Soyad</td>
+                <td>@x.Otel.OtelBaslik</td>
+                <td>@x.Otel.Fiyat</td>
+                <td><a href="/Rezervasyonlar/BlogSil/@x.ID" class="btn btn-danger">İptal Et</a></td>
+                <td><a href="/Blog/BlogDetay/@x.Otel.ID" class="btn btn-info">Detaylar</a></td>
+            </tr>
+        }
+    </table>
+</div>
+
+
+
+
+

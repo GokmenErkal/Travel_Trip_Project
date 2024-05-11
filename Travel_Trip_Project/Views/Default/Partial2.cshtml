@@ -1,0 +1,29 @@
+﻿@using Travel_Trip_Project.Models.Siniflar
+@model List<Blog>
+
+<div class="con-bot">
+    @foreach (var x in Model)
+    {
+        <div class="right" style="width:291px; height:385px; margin:20px 50px;">
+            <div class="bot-left" style="margin-bottom:0;">
+                <img src="@x.BlogImage" style="width:300px; height:150px" alt="" />
+            </div>
+            <div class="left-text" style="border:1px solid #ddd;">
+
+                <div><h4 style="color:#122264">@x.Baslik</h4></div>
+                <div style="display:flex;">
+                    <div class="col-in" style=" margin-left: 20px; display:inline-block; vertical-align:middle; width: calc(50% - 1px);">
+                        <span class="text" style="display:block;">Tur Süresi</span>
+                        <span class="date">@x.Aciklama</span>
+                    </div>
+                    <div class="col-in col2" style="margin-left: 20px; display:inline-block;
+            vertical-align:middle; width: calc(50% - 1px);">
+                        <span class="text">Çıkış Tarihi</span>
+                        <span class="date">@x.Tarih.Value.ToString("dd.MM.yyyy")</span>
+                    </div>
+                </div>
+                <div style="padding:30px 0"><a href="/Blog/BlogDetay/@x.ID"><span style="background:#122264; border:1px solid #122264; margin-top:300px;" class="read">Devamını oku >></span></a></div>
+            </div>
+        </div>
+    }
+</div>

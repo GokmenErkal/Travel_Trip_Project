@@ -1,0 +1,159 @@
+﻿@model Travel_Trip_Project.Models.Siniflar.BlogYorum
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link href="~/web2/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/web2/css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!----webfonts---->
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
+    <style>
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f6f9fd;
+        }
+
+        .row {
+            display: flex;
+            border: 1px solid #fff;
+            border-radius: 8px;
+            margin-bottom: 18px;
+            background-color: #fff;
+            /*box-shadow:0 5px 5px #ddd;*/
+            box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
+            transition: box-shadow .4s;
+            cursor: pointer;
+        }
+
+        .row:hover {
+            box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.5);
+        }
+
+        .row img {
+            margin: 12px;
+            width: 230px;
+            height: 230px;
+            border-radius: 5px;
+        }
+
+        .left {
+            margin-left: 20px;
+        }
+
+        .col-8 {
+            margin: 12px;
+        }
+
+        .box1 {
+            margin: 18px 0;
+        }
+
+        .box1 .span{
+            margin-left: 15px;
+        }
+
+        .box1 h2{
+            margin:0;
+            padding:0;
+        }
+        .btn-success {
+            background: #2fa252;
+            color: #fff;
+            border: 1px solid #fff;
+            font-size:18px;
+        }
+
+        .btn-success:hover {
+            background:#fff;
+            color: #2fa252;
+            border: 1px solid #2fa252;
+        }
+        
+        .row{
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="single wrap">
+        <div class="container" style="margin-right:0">
+            <div class="col-md-9 single-main left" style="margin-right:0">
+                @foreach (var x in Model.Deger1)
+                {
+                <div class="row" style="margin-left: -45px; width:700px;">
+                    <div class="single-grid col-4">
+                        <img src="@x.BlogImage" alt="" />
+
+                        @*<p>@x.Aciklama</p>*@
+                    </div>
+                    
+                    <div class="col-8">
+                        <a href="/Blog/BlogDetay/@x.ID">@x.Baslik</a>
+                        <div class="box1">
+                            <i class="fa-regular fa-calendar-days fa-xl"></i>
+                            <span class="span">@x.Tarih.Value.ToString("dd.MM.yyyy") -           @x.BitisTarihi.Value.ToString("dd.MM.yyyy")</span>
+                        </div>
+                        <div class="box1">
+                            <i class="fa-solid fa-moon fa-xl"></i>
+                            <span class="span">@x.Aciklama</span>
+                        </div>
+                        <div class="box1">
+                            <h2>@x.Fiyat<span style="font-size:18px; margin-left:5px">€'dan başlayan fiyatlar</span></h2>
+                        </div>
+                        <div class="box1">                           
+                            <a class="btn btn-success" href="/Blog/BlogDetay/@x.ID">Turu İncele</a>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+            
+            <div class="row" style="width:250px; display:inline-block; margin-left:-20px;">
+                <div class=" side-content">
+                    <div class="recent" style="padding: 10px;">
+                        <h3>Son Turlar</h3>
+                        @foreach (var y in Model.Deger3)
+                        {
+                            <ul>
+                                <li><a href="/Blog/BlogDetay/@y.ID">@y.Baslik</a></li>
+                            </ul>
+                        }
+                    </div>
+
+                    <div class="comments" style="padding: 10px;">
+                        <h3>Son Yorumlar</h3>
+                        <ul>
+                            <li><a href="#">Amada Doe </a> on <a href="#">Hello World!</a></li>
+                            <li><a href="#">Peter Doe </a> on <a href="#"> Photography</a></li>
+                            <li><a href="#">Steve Roberts  </a> on <a href="#">HTML5/CSS3</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

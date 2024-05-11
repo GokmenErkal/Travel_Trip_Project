@@ -1,0 +1,69 @@
+﻿<form method="post">
+    <div id="form">
+        <div id="first-group">
+            <input type="hidden" placeholder="ID" name="Otelid" value="@ViewBag.deger" required />
+            <div id="content">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <input type="text" id="input-group" name="Ad" placeholder="Ad">
+            </div>
+
+            <div id="content">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <input type="number" id="input-group" name="Telefon" placeholder="Telefon Numarası">
+            </div>
+
+            <div id="content">
+                <i class="fa fa-users" aria-hidden="true"></i>
+                <input type="number" id="input-group" name="KisiSayisi" placeholder="Kişi Sayısı">
+            </div>
+
+            @*<div id="content">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    <input type="text" id="input-group" placeholder="Departure Date">
+                </div>
+
+                <div id="content">
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                    <select id="input-group" style="background-color: black;">
+                        <option value="">No.of guests</option>
+                        <option value="">1-5</option>
+                        <option value="">6-10</option>
+                        <option value="">11-20</option>
+                    </select>
+                </div>*@
+
+        </div>
+
+        <div id="second-group">
+
+            <div id="content">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <input type="text" id="input-group" name="Soyad" placeholder="Soyad">
+            </div>
+
+            <div id="content">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <input type="email" id="input-group" name="Mail" placeholder="Email">
+            </div>
+
+            <div id="content">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+                <input type="date" id="input-group" name="DogumTarihi" placeholder="Doğum Tarihi">
+            </div>
+
+            @*<div id="content">
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                    <select id="input-group" style="background-color: black;">
+                        <option value="">Room Type</option>
+                        <option value="">AC</option>
+                        <option value="">Non-AC</option>
+                        <option value="">Single Bed</option>
+                        <option value="">Double Bed</option>
+                    </select>
+                </div>*@
+
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success">Rezervasyon Yap</button>
+</form>
+

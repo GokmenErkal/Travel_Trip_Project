@@ -1,0 +1,144 @@
+﻿@{
+    Layout = null;
+}
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Free Easy-Trip Website Template | Home :: w3layouts</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="~/web/css/style.css" type="text/css" media="all" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/web/css/slider.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="~/web/js/jquery.min.js"></script>
+    <script src="~/web/js/responsiveslides.min.js"></script>
+
+    <script>
+        // You can also use "$(window).load(function() {"
+        $(function () {
+            // Slideshow 1
+            $("#slider1").responsiveSlides({
+                auto: true,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+            });
+        });
+    </script>
+
+    <style>
+        .header {
+            background-color: #fff;
+            border-bottom: 1px solid #F2F2F2;
+        }
+
+            .header a {
+                transition: 0.5s all ease;
+                -webkit-transition: 0.5s all ease;
+                -moz-transition: 0.5s all ease;
+                -o-transition: 0.5s all ease;
+                -ms-transition: 0.5s all ease;
+            }
+
+        .footer-bottom {
+            background: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+            .footer-bottom p {
+                color: #000;
+            }
+
+        .wrap {
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        ul #nav {
+            padding: 0;
+        }
+
+        .content {
+            background: #f6f9fd;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="wrap">
+            <div class="logo">
+                <a href="/Default/Index/">
+                    <img src="~/web/images/tourism_agency-removebg-preview.png" width="150" height="150" alt="" />
+                </a>
+            </div>
+            <div>
+                <ul id="nav">
+                    <li><a href="/Default/Index/">Ana Sayfa</a></li>
+                    @*<li>
+            <a class="hsubs" href="destinations.html">Otel</a>
+            <ul class="subs">
+                <li><a href="#">Yurt Oteller</a></li>
+                <li><a href="#">Restoranlar</a></li>
+                <li><a href="#">Müzeler</a></li>
+            </ul>
+        </li>*@
+                    <li><a href="/Otel/Index">Otel</a></li>
+                    <li><a href="/Blog/Index">Tur</a></li>
+                    <li><a href="/Rezervasyonlar/Index">Rezervasyonlarım</a></li>
+                    <li><a href="/About/Index">Hakkımızda</a></li>
+                    @*<li><a href="/Contact/Index">İletişim</a></li>*@
+                    <li>
+                        <a style="border:1px solid; border-radius:5px; " class="hsubs" href="destinations.html"><i class="etsfonticon login-user"></i> <span>Giriş Yap</span><i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="subs">
+                            <li><a href="/UyeGiris/UyeGiris/">Giriş Yap</a></li>
+                            <li><a href="/UyeKayit/UyeKayit/">Üye Ol</a></li>
+                            <li><a href="/GirisYap/Login/">Admin</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--
+    <div class="con-right">
+        <div class="grid1-l-img">
+            <img src="~/web/images/contact.png" alt="">
+            <i class="fa-solid fa-phone-volume"></i>
+        </div>
+        <div class="grid1-l-desc">
+            <p>Contact : +91 00000-55555</p>
+        </div>
+        <div class="clear"></div>
+    </div>
+    -->
+
+    <div class="content">
+        @RenderBody()
+    </div>
+    <div class="footer-bottom" style="padding:15px 0">
+        <div class="wrap1">
+            <div class="copy">
+                <p>&copy; 2023 A-Travel. Tüm Hakları Saklıdır. | Design by <a href="http://w3layouts.com">W3Layouts</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,141 @@
+﻿@using Travel_Trip_Project.Models.Siniflar
+@model List<Blog>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <style>
+        /*.indent {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }*/
+        .banner{
+            margin: 12px 0;
+        }
+
+        .padding .list .list-bg a {
+            color: black;
+        }
+
+            .padding .list .list-bg a:hover {
+                color: #eee;
+            }
+
+        .padding .list .list-bg {
+            background-color: #fff;
+        }
+
+            .padding .list .list-bg:hover {
+                background: #C9D1D3;
+            }
+    </style>
+</head>
+<body>
+    <div class="header-banner">
+        <div class="wrap" >
+            <div class="banner" style="width:100%; ">
+                <h2 class="indent-left margin-bot" style="color:#122264;">A-Travel Tatil & Seyahat Sitesine Hoş Geldiniz</h2>
+                <div class="indent">
+                    @*<div class="banner-left">
+                        <div class="con-text">
+                            <div class="grid1-img">
+                                <img src="~/web/images/glass.png" alt="">
+                            </div>
+                            <div class="grid1-desc">
+                                <p>Restauranlar</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="con-text">
+                            <div class="grid1-img">
+                                <img src="~/web/images/flight.png" alt="">
+                            </div>
+                            <div class="grid1-desc">
+                                <p>Uçuşlar</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="con-text">
+                            <div class="grid1-img">
+                                <img src="~/web/images/group.png" alt="">
+                            </div>
+                            <div class="grid1-desc">
+                                <p>Yapılacak Şeyler</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="con-text">
+                            <div class="grid1-img">
+                                <img src="~/web/images/key.png" alt="">
+                            </div>
+                            <div class="grid1-desc">
+                                <p>Araba Kiralama</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>*@
+                    <div class="header_bottom_right_images">
+
+                        <div class="slider" >
+                            <ul class="rslides" id="slider1">
+                                @foreach (var x in Model)
+                                {
+                                    <li><img src="@x.BlogImage" alt="" style="width:1200px; height:500px"></li>
+                                }
+
+
+                                @*<li><img src="~/web/images/img2.jpg" alt=""></li>
+                        <li><img src="~/web/images/img3.jpg" alt=""></li>
+                        <li><img src="~/web/images/img4.jpg" alt=""></li>*@
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="wrap">
+            <div class="wrapper">
+                <div class="con-top">
+                    <h3 style="color:#122264;">Herkese Uygun Tatil Seçenekleri</h3>
+                    <p>
+                        Jolly ile unutulmaz bir tatil deneyimi sizleri bekliyor. Yurt içi ve yurt dışı yüzlerce farklı konaklama seçeneği ve geniş kapsamlı turlar ile uygun fiyatlı tatil paketlerini en ince ayrıntısına kadar sizi düşünerek hazırlayan Jolly, 35 yıllık deneyimi ve birikimi ile hayalinizdeki tatili gerçeğe dönüştürüyor.
+
+                        Tatilcilerin yol arkadaşı ve gezginlerin daimi başlangıç noktası olan Jolly ile harika bir yaz geçirebilir, muhteşem bir balayı yapabilir; maviliklere yelken açtıran gemi turları,keşiflerle dolu yurt dışı turları, Anadolu'yu gezdiren kültür turları ile her bütçeye ve zevke uygun tur seçenekleri arasından seçim yaparak içinizdeki keşfetme tutkusunun peşine düşebilirsiniz.
+
+                        Tercih sizden, popüler tatil yerleri Jolly'den... Binlerce farklı destinasyonda dilediğiniz tatile çıkabilir, size uygun otel seçenekleri arasından tercih yapabilir ve seyahat planınızı sorunsuz bir şekilde gerçekleştirebilirsiniz.
+
+                        Yurt içi tatiliniz için yazın vazgeçilmez rotaları arasında yer alan Ege ve Akdeniz sahillerine uzanabilir; Çeşme, Bodrum, Fethiye ve Antalya’nın enfes kumsallarından berrak sularına doğru bir yolculuğa çıkabilirsiniz. Temiz havaya doymak ve yeşilin binbir tonuna şahit olmak için Karadeniz turları ile doğa tatili yapabilir, günübirlik veya hafta sonu turları ile hayata kısa bir mola verebilir, birbirinden lezzetli yöresel yemeklerin tadına GAP turları ile bakabilirsiniz.
+                    </p>
+                </div>      
+                @Html.Action("Partial1", "Default")
+                <div class="grids">
+                    <div class="box1" style="display:flex; justify-content:center;">
+                        @Html.Action("Partial3", "Default")
+                        @Html.Action("Partial4", "Default")
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

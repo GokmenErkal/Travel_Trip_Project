@@ -1,0 +1,222 @@
+﻿@model Travel_Trip_Project.Models.Siniflar.OtelYorum
+
+@{
+    ViewBag.Title = "OtelDetay";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Personal Blog a Blogging Category Flat Bootstarp  Responsive Website Template | Single :: w3layouts</title>
+    <link href="~/web2/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/web2/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="~/webtravelregister/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!----webfonts---->
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
+    <!----//webfonts---->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /*.wrap {
+            width: 970px;
+        }*/
+
+        .single-main {
+            width: 100%;
+        }
+
+        ul.comment-list {
+            background: #fff;
+            border: 1px solid #fff;
+            border-radius: 4px;
+            box-shadow: 0px 7px 29px 0px #F2F2F2;
+            cursor: pointer;
+            margin-top: 12px;
+        }
+
+        .box1 {
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 35px;
+            margin-top: 20px;
+        }
+
+        .box-detay {
+            border: 1px solid #fff;
+            background: #fff;
+            border-radius: 4px;
+            padding: 14px;
+            margin: 20px 0;
+            box-shadow: 0px 7px 29px 0px #F2F2F2;
+        }
+
+            .box-detay h3 {
+                padding: 8px;
+                border-bottom: 1px solid #000;
+            }
+
+        .yorumlar {
+            color: #00aeff;
+            margin: 20px 0;
+            padding: 14px 0;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .rezervasyon {
+            border: 1px solid #fff;
+            background: #fff;
+            border-radius: 4px;
+            padding: 14px;
+            box-shadow: 0px 7px 29px 0px #F2F2F2;
+            margin-bottom: 30px;
+        }
+
+            .rezervasyon h3 {
+                border-bottom: 1px solid black;
+                padding: 8px;
+            }
+
+        .col-in, .col {
+            display: inline-block;
+            vertical-align: middle;
+            width: calc(50% - 1px);
+        }
+
+        .col-in {
+            padding: 30px 0;
+        }
+
+        .text {
+            display: block;
+        }
+
+        .date {
+            font-weight: 600;
+        }
+
+        .col {
+            display: flex;
+        }
+
+        .box1 h2 {
+            padding: 0;
+        }
+
+        #form {
+            margin-top: 20px;
+            opacity: 0.5;
+            background: #f5f5f5;
+            border: 1px solid #f2f2f2;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="single wrap">
+        <div class="container">
+            <div class="col-md-8 single-main">
+                <div class="single-grid">
+                    @foreach (var x in Model.Deger1)
+                    {
+                        <img src="@x.OtelImage" alt="" style="margin-bottom:20px; height:500px;" />
+                        <h2>@x.OtelBaslik</h2>
+
+                        <div class="rezervasyon">
+                            <h3>Rezervasyon Yap</h3>
+
+                            <div class="box1 col">
+                                <div class="col-in col1">
+                                    <span style="margin-bottom:12px" class="text">Konum</span>
+                                    <span class="span date">@x.Konum</span>
+                                </div>
+                                <div class="col-in col2" style="margin-left: 18px;">
+                                    <span class="text">Seyahat Tutarı</span>
+                                    <h2>
+                                        @x.Fiyat<span style="font-size:18px; margin-left:5px">
+                                        ,00 Tl
+                                    </span>
+                                </h2>
+                                </div>
+                            </div>
+
+                            @*<div class="box1 col-in">
+                                <span>Seyahat Tutarı</span>
+                                <h2>@x.Fiyat<span style="font-size:18px; margin-left:5px">,00 Tl
+                                    </span></h2>
+                            </div>*@
+
+                            @Html.Action("OtelRezervEkle", "Otel")
+                        </div>
+
+                        <div class="box-detay">
+                        <h3>Otel Detayları</h3>
+                        <p>@x.OtelDetay</p>
+                        </div>
+                    }
+                </div>
+                @*<h2 class="yorumlar">Yorumlar</h2>
+     
+                @foreach (var y in Model.Deger2)
+                {
+                    <ul class="comment-list">
+                        <li>
+                            <img src="~/web2/images/avatar.png" class="img-responsive" alt="">
+                            <div class="desc">
+                                <p>@y.KullaniciAdi: @y.Yorum</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </li>
+                    </ul>
+                }
+
+                @Html.Action("YorumYap", "Blog")*@
+            </div>
+
+            @*<div class="col-md-4 side-content">
+                    <div class="recent">
+                        <h3>RECENT POSTS</h3>
+                        <ul>
+                            <li><a href="#">Aliquam tincidunt mauris</a></li>
+                            <li><a href="#">Vestibulum auctor dapibus  lipsum</a></li>
+                            <li><a href="#">Nunc dignissim risus consecu</a></li>
+                            <li><a href="#">Cras ornare tristiqu</a></li>
+                        </ul>
+                    </div>
+                    <div class="comments">
+                        <h3>RECENT COMMENTS</h3>
+                        <ul>
+                            <li><a href="#">Amada Doe </a> on <a href="#">Hello World!</a></li>
+                            <li><a href="#">Peter Doe </a> on <a href="#"> Photography</a></li>
+                            <li><a href="#">Steve Roberts  </a> on <a href="#">HTML5/CSS3</a></li>
+                        </ul>
+                    </div>
+                </div>*@
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+﻿@using Travel_Trip_Project.Models.Siniflar
+@model List<TurRezervasyon>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+
+</head>
+
+<body>
+    <div style="width:85%; margin: 0 auto;">
+        <h2>Tur Rezervasyonlarım</h2>
+        <br />
+        <table style="margin-bottom:20px" class="table table-bordered">
+            <tr>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Tur Adı</th>
+                <th>Fiyat</th>
+                <th>Sil</th>
+                <th>Detaylar</th>
+            </tr>
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.Ad</td>
+                    <td>@x.Soyad</td>
+                    <td>@x.Blog.Baslik</td>
+                    <td>@x.Blog.Fiyat</td>
+                    <td><a href="/Rezervasyonlar/BlogSil/@x.ID" class="btn btn-danger">İptal Et</a></td>
+                    <td><a href="/Blog/BlogDetay/@x.Blog.ID" class="btn btn-info">Detaylar</a></td>
+                </tr>
+            }
+        </table>
+    </div>
+    @Html.Action("OtelRezerv", "Rezervasyonlar")
+
+</body>
+
+</html>
+
+
+
+
+
+
+
